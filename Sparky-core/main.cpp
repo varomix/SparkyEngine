@@ -1,12 +1,26 @@
-#include <GLFW/glfw3.h>
-#include <iostream>
+#include "graphics/window.h"
+
+using namespace sparky;
+using namespace graphics;
 
 int main()
 {
-	if(!glfwInit())
-		std::cout << "error" << std::endl;
-	else
-		std::cout << "Success!" << std::endl;
 
-	return 0;
+
+    Window window("Sparky!", 960, 540);
+    glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
+
+    while (!window.closed()) {
+        window.clear();
+        glBegin(GL_QUADS);
+        glVertex2f(-0.5f, 0.5f);
+        glVertex2f(0.5f, 0.5f);
+        glVertex2f(0.5f, -0.5f);
+        glVertex2f(-0.5f, -0.5f);
+        glEnd();
+        window.update();
+
+    }
+
+    return 0;
 }

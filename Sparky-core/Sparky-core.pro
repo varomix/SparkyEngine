@@ -7,4 +7,8 @@ CONFIG += c++11
 
 LIBS = -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -pthread -lXi -ldl -lXinerama -lXcursor
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    graphics/window.cpp
+
+HEADERS += \
+    graphics/window.h
